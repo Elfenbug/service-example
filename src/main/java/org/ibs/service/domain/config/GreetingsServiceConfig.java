@@ -25,8 +25,8 @@ public class GreetingsServiceConfig {
         return new GreetingsServiceImpl2(log);
     }
 
-    @Bean
-    Employee makeDefEmpl() {
-        return new Employee(null, "Nikita", null, null, null,null,null);
-    }
+//    @Bean
+//    Employee makeDefEmpl() {
+//        return new Employee(null, "Nikita", null, null, null, null, null, null);
+//    }
 }
