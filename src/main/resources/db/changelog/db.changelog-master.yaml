@@ -70,6 +70,13 @@ databaseChangeLog:
                 type: int
                 constraints:
                   nullable: false
+            - column:
+                name: boss_id
+                type: int
+                constraints:
+                  nullable: true
+                  foreignKeyName: fk_employee_employee
+                  references: employee(id)
       - createTable:
           tableName: employee_course
           columns:
@@ -94,3 +101,4 @@ databaseChangeLog:
                   nullable: false
                   foreignKeyName: fk_course
                   references: course(id)
+

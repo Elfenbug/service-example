@@ -26,7 +26,7 @@ public class Department {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "department")
     @JsonIgnore
     private List<Employee> employees;
 

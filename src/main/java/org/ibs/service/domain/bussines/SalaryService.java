@@ -1,5 +1,6 @@
 package org.ibs.service.domain.bussines;
 
+import org.ibs.service.domain.EmployeeRepository;
 import org.ibs.service.domain.entity.Department;
 import org.ibs.service.domain.entity.Employee;
 import org.ibs.service.dto.EmployeeDto;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,6 +17,9 @@ public class SalaryService {
 
     @Autowired
     private DepartmentRepository repository;
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
     @Autowired
     private EmployeeMapper mapper;
@@ -29,5 +34,9 @@ public class SalaryService {
                 .max(Comparator.comparing(Employee::getMonthSalary)).get();
 
         return  Optional.of(mapper.toDto(employee));
+    }
+
+    public List<Employee> findAllEmployeeOverPrice() {
+        return  employeeRepository.findAllEmployeeOverPrice();
     }
 }

@@ -1,6 +1,5 @@
 package org.ibs.service.domain.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -45,5 +44,8 @@ public class Employee {
     joinColumns = @JoinColumn(name="employee_id"),
     inverseJoinColumns = @JoinColumn(name="course_id"))
     private List<Course> course;
+
+    @Column(name = "boss_id")
+    private Long bossId;
 
 }
